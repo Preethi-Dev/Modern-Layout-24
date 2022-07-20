@@ -1,5 +1,179 @@
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap");
+
 /* Resets */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
 /* Fonts */
+@font-face {
+  font-family: "FORQUE";
+  src: url(./assets/fonts/Forque-webfont.woff);
+}
+
 /* Variables */
+:root {
+  --primary: #1c2f31;
+  --bg: #f8f6eb;
+}
+
 /* Base Styles */
+body {
+  background-color: var(--bg);
+  color: var(--primary);
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+main {
+  background-image: url(./assets/images/Bg.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+header .logo h1 {
+  font-family: "FORQUE";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 28px;
+  letter-spacing: -0.02em;
+}
+
+header ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+header ul li a {
+  font-family: "Titillium Web";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 24px;
+  letter-spacing: -0.02em;
+
+  color: var(--primary);
+}
+
+main .title p {
+  font-family: "FORQUE";
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+main .title p:nth-child(2) {
+  -webkit-text-stroke: 2px;
+  -webkit-text-fill-color: transparent;
+}
+
+main .subtitle {
+  display: flex;
+  flex-direction: column;
+}
+
+main .subtitle p {
+  font-family: "Titillium Web";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.375rem;
+  line-height: 33px;
+  letter-spacing: -0.02em;
+}
+
+main .subtitle p span {
+  font-weight: 700;
+}
+
 /* Mobile Styles */
+header ul {
+  gap: 1rem;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-areas:
+    ". title    title    title    title    ."
+    ". subtitle subtitle subtitle subtitle .";
+  grid-row-gap: 2rem;
+}
+
+main .title {
+  grid-area: title;
+}
+
+main .subtitle {
+  grid-area: subtitle;
+}
+
+main .title p {
+  font-size: 8rem;
+}
+
+main .title p:nth-child(2) {
+  text-align: right;
+}
+
+/* Tablet Styles */
+@media screen and (min-width: 690px) {
+  main {
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-areas:
+      ". .        title    title    title    title    title    ."
+      ". subtitle subtitle subtitle subtitle .        .        .";
+  }
+
+  main .title p:nth-child(3) {
+    text-align: center;
+  }
+}
+
+/* Laptop and desktop Styles */
+@media screen and (min-width: 690px) {
+  main {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas:
+      ".  .        .        title      title    title    title    title    title    title title ."
+      ".  subtitle subtitle subtitle   subtitle subtitle        .        .        .         .    .     .";
+    max-width: 1600px;
+  }
+
+  main {
+    padding: 200px 0 100px;
+  }
+
+  main .title p {
+    font-size: 9rem;
+    line-height: 166px;
+  }
+}
