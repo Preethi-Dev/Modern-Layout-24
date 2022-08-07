@@ -41,9 +41,6 @@ img {
 
 .container {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 main {
@@ -166,6 +163,7 @@ main .title p:nth-child(2) {
       ".  .        .        title      title    title    title    title    title    title title ."
       ".  subtitle subtitle subtitle   subtitle subtitle        .        .        .         .    .     .";
     max-width: 1600px;
+    margin: 0 auto;
   }
 
   main {
